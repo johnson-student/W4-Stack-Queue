@@ -43,7 +43,7 @@ bool isBalance(string s) {
             stack.push(c);
         } else if (c == ')' || c == '}' || c == ']') {
             if (stack.isEmpty()) {
-                pos = i;
+                pos = i+1;
                 isError = true;
                 cout << "Error: closing bracket '" << c 
                      << "' at position " << pos 
@@ -52,7 +52,7 @@ bool isBalance(string s) {
             }
             char top = stack.peek();
             if (!isMatching(top, c)) {
-                pos = i;
+                pos = i+1;
                 isError = true;
                 cout << "Error: bracket '" << c
                      << "' at position " << pos
@@ -78,5 +78,5 @@ bool isBalance(string s) {
 
 
 int main() {
-    isBalance("{}{(()}"); // test
+    isBalance("())"); // test
 }
