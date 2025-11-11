@@ -21,14 +21,14 @@ class Stack{
             arr[top--];
         }
     }
-    void peek(){
+    char peek(){
         if(top < 0){
             cout<<"There is nothing in stack"<<endl;
         }else{
-            cout<<"Peek: "<<arr[top]<<endl;
+            return arr[top];
         }
     }
-    bool isEnpty(){
+    bool isEmpty(){
         return top < 0 ;
     }
 };
